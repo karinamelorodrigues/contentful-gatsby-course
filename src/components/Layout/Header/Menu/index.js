@@ -9,7 +9,14 @@ const Menu = () => {
             id
             label
             page {
-                slug
+                ... on ContentfulPage{
+                    slug
+                }
+                
+                ... on ContentfulBlog{
+                    slug
+                }
+                
             }
          }
         query MenuQuery {
